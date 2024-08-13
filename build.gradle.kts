@@ -40,6 +40,7 @@ tasks {
     // Set the release flag. This configures what version bytecode the compiler will emit, as well as what JDK APIs are usable.
     // See https://openjdk.java.net/jeps/247 for more information.
     options.release = 21
+    options.encoding = "UTF-8"
   }
   javadoc {
     options.encoding = Charsets.UTF_8.name() // We want UTF-8 for everything
@@ -58,8 +59,9 @@ tasks {
 // Configure plugin.yml generation
 // - name, version, and description are inherited from the Gradle project.
 bukkitPluginYaml {
-  main = "io.papermc.paperweight.testplugin.TestPlugin"
+  main = "org.octsrv.mobcapture.MobCapture"
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
-  authors.add("Author")
+  authors.add("october")
   apiVersion = "1.21"
+  commands.create("getcapturer")
 }
